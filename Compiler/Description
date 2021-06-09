@@ -1,0 +1,67 @@
+Regular Expressions used to make tokens are as following
+		Detail	Example
+	Identifiers       	(_|L)(L|_|D)*(D|_)	   For Example _rate2, _rate_, rat1e2 …etc
+	Numbers	            [+-]?(D+)(\.D+)?,  and exponent numbers.	   For example 3.43433E+13, 
+
+	Operators	  <,>,!=, <>, :=, ==, *, +, /,-, >>,<<, ++, =+, &&, ||, =>, =<, %, :,  =, ::, -- 	
+Punctuations	     [,{,(,),},]	
+	Keyword	           loop, agar, magar,  naheto, asm,  else, new, this, auto, enum, operator, throw, bool , explicit, private, true, break, 
+  export, protected , try,  case, extern, public, typedef, catch,  false, register, typeid, char, float, typename, 
+class,  for, return, union, const,  friend, short, unsigned,goto,  signed,  using, continue, if, sizeof, virtual, default, inline,  static, void, delete, int, volatile, do, long, struct, 
+double,  mutable,  switch,  while,  namespace	
+
+
+For phase 2 CFG Used is as following
+
+1.Function    ->    Type identifier ( ArgList ) CompoundStmt 	
+2.ArgList	->	Arg Arglist'
+3.Arglist' ->       ,Arg Arglist' 
+4.Arglist' ->        NULL
+5.Arg	->		Type identifier
+6,Declaration ->		Type IdentList ;
+7.Type	->		int	
+8.Type	->		 float
+9.Stmt	->		ForStmt			  
+10.Stmt	->		 WhileStmt
+11.Stmt	->		  Expr ;
+12.Stmt	->		  IfStmt 
+13.Stmt	->		  CompoundStmt
+14.Stmt	->		  Declaration
+15.Stmt	->		  ;		
+16.OptExpr	->	Expr	 
+17.OptExpr	->	NULL	
+18.WhileStmt ->		while < Expr > Stmt				
+19.IfStmt	->	if < Expr > Stmt ElsePart			
+20.ElsePart ->		else Stmt  
+21.ElsePart ->		NULL
+22.CompoundStmt ->	[ StmtList ]					
+23.StmtList	->	StmtList'
+24.StmtList' ->  Stmt StmtList' 
+25.StmtList'	->	NULL 
+26.Expr	->	identifier :=	Expr	
+27.Expr	->	 Rvalue
+28.Rvalue	->	  Mag Revalue'
+29.Revalue'  ->       Compare Mag Revalue' 
+30.Revalue'  ->        NULL
+31.Mag	->		Term Mag'
+32.Mag'    ->            + Term Mag' 
+33.Mag'    ->             -Term Mag' 
+34.Mag'    ->             NULL 
+35.Term	->		Factor Term'
+36.Term'   ->           * Factor Term' 
+37.Term'   ->            / Factor Term' 
+38.Term'   ->            NULL
+39.Factor	->	( Expr ) 
+40.Factor	->	 identifier 
+41.Factor	->	 number
+42.ForStmt	->	for < Expr ; OptExpr ; OptExpr > Stmt 
+43.Compare ->		== 
+44.Compare ->		 < 
+45.Compare ->		 > 
+46.Compare ->		 <= 
+47.Compare ->		 >= 
+48.Compare ->		 != 
+49.Compare ->		 <>
+50.IdentList ->		identifier , Identlist'
+51.Identlist'  ->            Identlist' 
+52.Identlist'  ->             NULL 
