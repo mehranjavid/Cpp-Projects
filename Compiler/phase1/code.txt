@@ -1,0 +1,4 @@
+int main_ (int var1) [int abc_ ; int var ; var1 := 10 ; while < var1 == 8 > ;var := var2 ; v_ >= p1 ; abc_ := ( a_ + 10.5 ) ; if < 7.5 :=a_ > a_ * b_ ; if <a_ := 10.75 > ;for <i_ = 0 ; ; > ; ] #
+
+
+
