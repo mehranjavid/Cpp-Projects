@@ -1,0 +1,5 @@
+Type identifier ( ArgList ) CompoundStmt,Arg Arglist',' Arg Arglist',NULL,Type identifier,Type IdentList ;,int,float,ForStmt,WhileStmt,Expr ;,IfStmt,CompoundStmt,Declaration,;,Expr,NULL,while < Expr > Stmt,if < Expr > Stmt ElsePart,else Stmt,NULL,[ StmtList ],StmtList',Stmt StmtList',NULL,identifier := Expr,Rvalue,Mag Revalue',Compare Mag Revalue',NULL,Term Mag',+ Term Mag',-Term Mag',NULL,Factor Term',* Factor Term',/ Factor Term',NULL,( Expr ),identifier,number,for < Expr ; OptExpr ; OptExpr > Stmt,==,<,>,<=,>=,!=,<>,identifier Identlist',Identlist',NULL#  
+	
+		
+
+		
